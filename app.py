@@ -33,7 +33,7 @@ app.layout = html.Div([
         html.Div([
             dcc.RangeSlider(id='perc_slider',
                             pushable=True,
-                            updatemode='drag',
+                            updatemode='mouseup',
                             marks={k: {'label': str(k)+'%'} 
                                    for k in range(1, 19)},
                             min=1,
