@@ -4,6 +4,10 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
+import logging
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s==%(funcName)s==%(message)s')
 
 health_df = pd.read_csv('data/country_data_master.csv',
                         usecols=['country', 'lon', 'lat', 'population', 
@@ -82,6 +86,7 @@ def set_maximum(numtype):
 @app.callback(Output('country_scatter', 'figure'),
              [Input('perc_slider', 'value'), Input('abs_perc', 'value')])
 def write_numbers(numbers, abs_perc):
+    logging.info(msg=locals())
     col = 'health_exp_perc' if abs_perc == 'health_exp_perc' else 'health_industry_usd'
     numbers = numbers if abs_perc == 'health_exp_perc' else [10**x for x in numbers]
     df = health_df[health_df[col].between(numbers[0], numbers[1])]
@@ -92,6 +97,7 @@ def write_numbers(numbers, abs_perc):
                                mode='markers',
                                marker={'color': df[col],
                                        'size': 22,
+                                       'opacity': 0.85,
                                        'showscale': True,
                                        'colorscale': 'Cividis',
                                        'colorbar': {'ticksuffix': '%' if col == 'health_exp_perc' else '',
