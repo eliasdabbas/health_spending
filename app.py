@@ -49,18 +49,18 @@ app.layout = html.Div([
                   }),
     ], style={'width': '70%', 'margin-left': '15%'}),
 
-    html.A('@eliasdabbas', href='https://www.twitter.com/eliasdabbas'), 
-    html.P(),
-    html.Content('Data: CIA World Factobook  '),
-    html.A('Health Expenditure', href='https://www.cia.gov/library/publications/the-world-factbook/fields/2225.html'),
-    html.Br(),
-    html.Content('  Code: '),
-    html.A('github.com/eliasdabbas/health_spending', href='https://github.com/eliasdabbas/health_spending'), html.Br(), html.Br(),
-    html.Content('This entry provides the total expenditure on health as a percentage of GDP. Health expenditures are '
-                 'broadly defined as activities performed either by institutions or individuals through the application '
-                 'of medical, paramedical, and/or nursing knowledge and technology, the primary purpose of which is to '
-                 'promote, restore, or maintain health.')
-
+    # html.A('@eliasdabbas', href='https://www.twitter.com/eliasdabbas'),
+    # html.P(),
+    # html.Content('Data: CIA World Factobook  '),
+    # html.A('Health Expenditure', href='https://www.cia.gov/library/publications/the-world-factbook/fields/2225.html'),
+    # html.Br(),
+    # html.Content('  Code: '),
+    # html.A('github.com/eliasdabbas/health_spending', href='https://github.com/eliasdabbas/health_spending'), html.Br(), html.Br(),
+    # html.Content('This entry provides the total expenditure on health as a percentage of GDP. Health expenditures are '
+    #              'broadly defined as activities performed either by institutions or individuals through the application '
+    #              'of medical, paramedical, and/or nursing knowledge and technology, the primary purpose of which is to '
+    #              'promote, restore, or maintain health.')
+    html.Br()
 ], style={'background-color': '#eeeeee'})
 
 
